@@ -13,18 +13,18 @@ const aj = arcjet({
     shield({
       mode: "LIVE",
     }),
+
+    {
+      match: {
+        "user-agent": /vercelbot/i,
+      },
+      allow: true,
+      reason: "Allow Vercelbot for image fetching and previews",
+    },
+    
     detectBot({
       mode: "LIVE",
-      allow: [
-        "CATEGORY:SEARCH_ENGINE",
-        "GO_HTTP",
-        {
-          match: {
-            "user-agent": /vercelbot/i,
-          },
-          reason: "Allow Vercelbot for build or preview operations",
-        },
-      ],
+      allow: ["CATEGORY:SEARCH_ENGINE", "GO_HTTP"],
     }),
   ],
 });
