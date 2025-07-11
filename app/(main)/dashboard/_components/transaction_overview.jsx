@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import {useState } from "react";
 import {
   PieChart,
   Pie,
@@ -23,7 +23,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 const COLORS = [
- "#C0392B", 
+  "#C0392B",
   "#159188",
   "#1A6A8D",
   "#3E8B6F",
@@ -77,7 +77,7 @@ export function DashboardOverview({ accounts, transactions }) {
   );
 
   return (
-    <div className="grid gap-4 md:grid-cols-2">
+    <div className="grid gap-4 lg:grid-cols-2">
       {/* Recent Transactions Card */}
       <Card>
         <CardHeader className="flex items-center justify-between space-y-0 pb-4">

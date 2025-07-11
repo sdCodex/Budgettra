@@ -2,15 +2,7 @@
 
 import { endOfDay, format, startOfDay, subDays } from "date-fns";
 import { useState, useMemo } from "react";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import {
   Select,
@@ -23,7 +15,6 @@ import {
 import {
   BarChart,
   Bar,
-  Rectangle,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -115,7 +106,7 @@ const AccountChart = ({ transactions }) => {
             </Select>
           </CardHeader>
           <CardContent>
-            <div className="flex justify-around mb-6 text-sm">
+            <div className="flex justify-around mb-6 text-sm flex-wrap">
               <div className="text-center">
                 <p className="text-muted-foreground">Total Income</p>
                 <p className="text-lg font-bold text-green-500">
