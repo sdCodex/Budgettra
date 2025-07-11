@@ -15,12 +15,21 @@ const aj = arcjet({
     }),
     detectBot({
       mode: "LIVE",
-      allow: ["CATEGORY:SEARCH_ENGINE", "GO_HTTP"],
+      allow: [
+        "CATEGORY:SEARCH_ENGINE",
+        "GO_HTTP",
+        {
+          match: {
+            "user-agent": /vercelbot/i,
+          },
+          reason: "Allow Vercelbot for build or preview operations",
+        },
+      ],
     }),
   ],
 });
 
-const clerk=clerkMiddleware(async (auth, req) => {
+const clerk = clerkMiddleware(async (auth, req) => {
   const { userId } = await auth();
   if (!userId && isProtectedRoute(req)) {
     const { redirectToSignIn } = await auth();
@@ -28,8 +37,7 @@ const clerk=clerkMiddleware(async (auth, req) => {
   }
 });
 
-
-export default createMiddleware(aj,clerk);
+export default createMiddleware(aj, clerk);
 
 export const config = {
   matcher: [
