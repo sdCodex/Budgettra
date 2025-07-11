@@ -84,7 +84,7 @@ export default function Home() {
                 <CardContent className="pt-4">
                   <div className="flex items-center mb-4">
                     <Image
-                      src="https://randomuser.me/api/portraits/women/75.jpg"
+                      src={testimonial.image}
                       alt={testimonial.name}
                       width={40}
                       height={40}
