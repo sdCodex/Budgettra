@@ -27,7 +27,7 @@ export default clerkMiddleware(async (auth, req) => {
   if (isVercelBot) {
     // If it's a Vercel bot, let it through immediately.
     // This is the most reliable way to handle previews.
-    return NextResponse.next();
+    return NextResponse.next()
   }
 
   // 2. Run Arcjet for all other requests.
