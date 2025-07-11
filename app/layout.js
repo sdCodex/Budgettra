@@ -10,7 +10,7 @@ export const metadata = {
   title: "Bugettra",
   description: "One Stop Finance Platform",
   icons:{
-    icon:"/budgettra-favicon.ico"
+    icon:"/favicon.ico"
   }
 };
 
