@@ -5,15 +5,15 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "randomuser.me",
-        pathname: "/**"
+        pathname: "/**",
       },
     ],
   },
-
-    experimental: {
+  experimental: {
     serverActions: {
       bodySizeLimit: "5mb",
     },
   },
 };
-export default nextConfig;
+
+module.exports = nextConfig;
