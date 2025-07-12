@@ -1,8 +1,35 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 const HeroSection = () => {
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    const imageElement = imageRef.current;
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const scrollThreshold = 100;
+
+      if (scrollPosition > scrollThreshold) {
+        imageElement.classList.add("scrolled");
+        console.log("add");
+      } else {
+        imageElement.classList.remove("scrolled");
+        console.log("remove");
+      }
+    };
+
+    window.addEventListener("scroll",handleScroll);
+    return ()=>window.removeEventListener("scroll",handleScroll);
+
+  }, []);
+
+
   return (
     <div className="pb-20 px-4">
       <div className="container mx-auto text-center">
@@ -23,15 +50,17 @@ const HeroSection = () => {
           </Link>
         </div>
 
-          <div className="max-w-5xl mx-auto px-4 mt-5">
-          <Image
-            src="/banner.jpg"
-            alt="Dashboard Preview"
-            width={1280}
-            height={720}
-            className="w-full h-auto rounded-lg shadow-2xl border"
-            priority
-          />
+        <div className="hero-image-wrapper mt-5 md:mt-0">
+          <div ref={imageRef} className="hero-image">
+            <Image
+              src="/banner.jpg"
+              width={1280}
+              height={720}
+              alt="Dashboard Preview"
+              className="rounded-lg shadow-2xl border mx-auto"
+              priority
+            />
+          </div>
         </div>
       </div>
     </div>
