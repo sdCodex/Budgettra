@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 
 import LogoScroller from "./_components/infinite-scroll-cards";
+import BuiltWithSection from "./_components/built-with-section";
 
 export default function About() {
   return (
@@ -39,7 +40,7 @@ export default function About() {
           </CardContent>
         </Card>
 
-        <Card className="mt-5">
+        <Card className="mt-[60px]">
           <CardContent>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight bg-gradient-to-br from-gray-300 to-black text-transparent bg-clip-text">
               Built With
@@ -49,6 +50,8 @@ export default function About() {
               features, AI integrations, and secure full-stack development using
               modern web technologies.
             </p>
+
+            <BuiltWithSection/>
 
             <LogoScroller />
           </CardContent>

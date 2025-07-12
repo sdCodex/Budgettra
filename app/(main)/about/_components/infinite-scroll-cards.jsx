@@ -20,6 +20,7 @@ const logos = [
     "zod.png",
     "gemini.png",
     "resend.png",
+    "Vercel.png"
   
 ];
 
