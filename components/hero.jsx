@@ -42,10 +42,15 @@ const HeroSection = () => {
           analyze and optimize your spending with real time insights
         </p>
 
-        <div>
+        <div className="flex gap-4 justify-center">
           <Link href="/dashboard">
             <Button size="lg" className="px-8">
               Get Started
+            </Button>
+          </Link>
+          <Link href="/about">
+            <Button variant="outline" size="lg" className="px-8">
+             About
             </Button>
           </Link>
         </div>
